@@ -51,9 +51,7 @@ void loop()
   while (radio.available()){                                 //If i get data, let me know 
     radio.read(&data, sizeof(flexData));
     lastRecvTime = millis(); 
-
   }  
-  
   unsigned long now = millis();  
   Serial.print(data.flex1); Serial.print("     ");            //index
   Serial.print(data.flex2); Serial.print("     "); 
@@ -64,7 +62,6 @@ void loop()
   finger3.write(data.flex3);
   finger4.write(data.flex4); 
 
-  
   Serial.print("     Lost: ");                               //print status of lost variable for me
   Serial.print(lost);
   
@@ -84,10 +81,17 @@ void loop()
     Serial.print("       RESET !!" );
    // analogWrite(reset, 1023);
   }
-  
   radio.startListening();  
   Serial.println();  
 }
+
+void resetFingers(){
+  data.flex1 = 105;
+  data.flex2 = 90;
+  data.flex3 = 180;
+  data.flex4 = 180;
+}
+
  
 
 
