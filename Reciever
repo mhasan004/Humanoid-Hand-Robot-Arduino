@@ -24,7 +24,6 @@ struct flexData{
   byte flex4;
 }; flexData data;
 
-
 void setup(){    
   Serial.begin(115200);
   Serial.println("Starting");
@@ -42,7 +41,6 @@ void setup(){
   radio.setRetries(15,15);       
   radio.startListening(); 
 }
-
 
 unsigned long lastRecvTime = 0;
 void loop() 
@@ -82,7 +80,7 @@ void loop()
   }
   radio.startListening();  
   Serial.println();  
-}
+} //end of program
 
 void resetFingers(){
   data.flex1 = 105;
@@ -90,14 +88,3 @@ void resetFingers(){
   data.flex3 = 180;
   data.flex4 = 180;
 }
-
- 
-
-
-
-
-
-
-
-
-
