@@ -9,7 +9,7 @@
 #include <nRF24L01.h>
 #include <printf.h>
 #include <RF24_config.h>                    //NRRF24 pin layout: UNO:  MOSI(pin11)MISO(pin12)SCK(pin13)(CE,CSN any pin; defined below)
-#define CE_PIN      7                       //                   MEGA: MOSI(pin51)MISO(pin50)SCK(pin52) any pin; defined below)               
+#define CE_PIN      7                       //MEGA: MOSI(pin51)MISO(pin50)SCK(pin52) any pin; defined below)               
 #define CSN_PIN     8
 RF24 radio(CE_PIN, CSN_PIN); 
 const uint64_t pipe = 0xE8E8F0F0E1LL;  
